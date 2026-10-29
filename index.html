@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal HOTS TKA Biologi SMA - Keanekaragaman Hayati, Bakteri & Ekosistem</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --secondary: #059669;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: var(--primary-light);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background-color: #047857;
+        }
+
+        .question-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .question-number {
+            background-color: var(--primary);
+            color: white;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 12px;
+        }
+
+        .topic-tag {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .question-text {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+
+        .option-item {
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background-color: #fafafa;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .option-label {
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        .explanation-toggle {
+            background: none;
+            border: none;
+            color: var(--primary-light);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .explanation-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .explanation-box {
+            display: none;
+            margin-top: 14px;
+            padding: 16px;
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 6px 6px 0;
+            font-size: 14px;
+        }
+
+        .explanation-box.active {
+            display: block;
+        }
+
+        .correct-answer {
+            font-weight: bold;
+            color: var(--secondary);
+            margin-bottom: 6px;
+        }
+
+        @media print {
+            .action-buttons, .explanation-toggle {
+                display: none !important;
+            }
+            .explanation-box {
+                display: block !important;
+                background-color: #f9f9f9;
+                border-left-color: #666;
+            }
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .question-card {
+                break-inside: avoid;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Paket Soal HOTS TKA Biologi SMA</h1>
+        <p>Materi: Keanekaragaman Hayati Indonesia, Struktur & Peran Bakteri, Ekosistem Indonesia</p>
+    </header>
+
+    <div class="action-buttons">
+        <button class="btn btn-secondary" onclick="toggleAllExplanations()">Tampilkan/Sembunyikan Pembahasan</button>
+        <button class="btn" onclick="window.print()">Cetak / Simpan ke PDF</button>
+    </div>
+
+    <!-- Soal 1 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 1</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Sebuah ekspedisi biologi di Garis Wallace menemukan populasi burung paruh bengkok endemik di Pulau Sulawesi yang menunjukkan variasi morfologi warna bulu dan ukuran paruh yang signifikan dibandingkan kerabat dekatnya di Kepulauan Maluku. Prinsip klasifikasi filogenetik modern menunjukkan bahwa isolasi geografis ini memicu spesiasi alopatrik. Manakah analisis yang paling tepat mengenai status keanekaragaman hayati pada tingkat takson tersebut?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Tingkat keanekaragaman genetik menurun karena isolasi geografis membatasi aliran gen antar populasi.</li>
+            <li class="option-item"><span class="option-label">B.</span> Tingkat keanekaragaman ekosistem meningkat sebagai dampak langsung dari variasi pola pakan burung.</li>
+            <li class="option-item"><span class="option-label">C.</span> Tingkat keanekaragaman spesies meningkat akibat akumulasi mutasi dan seleksi alam yang berbeda pada setiap pulau.</li>
+            <li class="option-item"><span class="option-label">D.</span> Tingkat keanekaragaman gen tunggal menyebabkan pembentukan populasi hibrid baru.</li>
+            <li class="option-item"><span class="option-label">E.</span> Keanekaragaman plasma nutfah hilang total akibat fragmentasi habitat alami.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(1)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-1">
+            <div class="correct-answer">Kunci Jawaban: C</div>
+            Isolasi geografis yang berkepanjangan membatasi alir gen (gene flow) antara populasi Sulawesi dan Maluku. Akumulasi mutasi serta seleksi alam yang berbeda di masing-masing lingkungan mengarahkan terjadinya spesiasi alopatrik (pembentukan spesies baru). Hal ini meningkatkan keanekaragaman hayati pada tingkat spesies.
+        </div>
+    </div>
+
+    <!-- Soal 2 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 2</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Pemerintah mengembangkan program perlindungan kawasan untuk menyelamatkan hewan endemik komodo (*Varanus komodoensis*). Jika terjadi introduksi hewan herbivora eksotik secara masif dari luar daerah ke dalam ekosistem Taman Nasional Komodo, manakah ancaman ekologis utama terhadap keanekaragaman hayati asli yang paling mungkin terjadi?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Penurunan populasi komodo akibat infeksi silang patogen spesifik mamalia.</li>
+            <li class="option-item"><span class="option-label">B.</span> Kompetisi sumber daya pakan yang ketat dengan herbivora endemik seperti rusa timor (*Cervus timorensis*) sehingga populasi asli terdesak.</li>
+            <li class="option-item"><span class="option-label">C.</span> Peningkatan laju fotosintesis vegetasi lokal karena tingginya kotoran hewan eksotik.</li>
+            <li class="option-item"><span class="option-label">D.</span> Terjadinya hibridisasi antara komodo dengan spesies eksotik baru.</li>
+            <li class="option-item"><span class="option-label">E.</span> Hilangnya sifat predasi komodo menjadi organisme pemakan bangkai sepenuhnya.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(2)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-2">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Introduksi spesies asing (invasif) dapat menimbulkan kompetisi sumber daya (makanan dan ruang) dengan spesies asli (rusa timor). Jika populasi rusa timor terdesak dan menurun, rantai makanan komodo sebagai predator puncak akan terganggu.
+        </div>
+    </div>
+
+    <!-- Soal 3 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 3</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Bakteri patogen *Staphylococcus aureus* yang resisten terhadap antibiotik metisilin (MRSA) sering menjadi tantangan medis medis di Indonesia. Bakteri ini merupakan Gram-positif dengan struktur dinding sel khusus. Manakah komponen struktur sel yang menjadi target utama mutasi/modifikasi hingga antibiotik golongan beta-laktam gagal menginhibisi sintesis dinding sel?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Lapisan lipopolisakarida pada membran luar sel bakteri.</li>
+            <li class="option-item"><span class="option-label">B.</span> Lapisan peptidoglikan yang tebal beserta struktur Penicillin-Binding Proteins (PBP).</li>
+            <li class="option-item"><span class="option-label">C.</span> Lapisan kapsul polisakarida ekstraseluler.</li>
+            <li class="option-item"><span class="option-label">D.</span> Struktur pili fimbriae pada permukaan luar membran.</li>
+            <li class="option-item"><span class="option-label">E.</span> Membran plasma yang tersusun atas lapisan fosfolipid ganda.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(3)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-3">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Bakteri Gram-positif memiliki lapisan peptidoglikan yang tebal. Antibiotik beta-laktam bekerja dengan mengikat enzim Penicillin-Binding Proteins (PBP) pada peptidoglikan. Resistensi timbul akibat perubahan konformasi PBP (misal PBP2a pada MRSA) sehingga antibiotik tidak dapat berikatan.
+        </div>
+    </div>
+
+    <!-- Soal 4 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 4</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Pengolahan limbah cair industri tapioka memanfaatkan konsorsium bakteri anaerobik methanogenik. Dalam siklus materi ekosistem buatan tersebut, peran bioteknologis utama dari kelompok bakteri anaerob ini adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Mengikat nitrogen bebas dari udara untuk memperkaya kadar nitrat limbah.</li>
+            <li class="option-item"><span class="option-label">B.</span> Menguraikan makromolekul organik kompleks menjadi senyawa sederhana dan menghasilkan metana sebagai sumber energi alternatif.</li>
+            <li class="option-item"><span class="option-label">C.</span> Membentuk klorofil untuk melangsungkan fotosintesis anoksigenik.</li>
+            <li class="option-item"><span class="option-label">D.</span> Mengendapkan zat beracun logam berat menjadi garam klorida.</li>
+            <li class="option-item"><span class="option-label">E.</span> Mengoksidasi amonia menjadi nitrit secara aerobik.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(4)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-4">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Bakteri methanogenik (anaerobik) berperan dalam fermentasi anaerobik yang mendegradasi bahan organik kompleks menjadi asam lemak rantai pendek dan gas metana ($CH_4$), yang bermanfaat sebagai energi terbarukan (biogas).
+        </div>
+    </div>
+
+    <!-- Soal 5 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 5</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Ekosistem mangrove di pesisir Indonesia menghadapi tekanan akumulasi logam berat akibat limbah industri. Jika terjadi penumpukan Timbal (Pb) pada sedimen dan diserap oleh produsen, fenomena biomagnifikasi manakah yang paling akurat terjadi pada jaringan makanan ekosistem tersebut?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Konsentrasi logam berat paling tinggi ditemukan pada tumbuhan mangrove sebagai produsen.</li>
+            <li class="option-item"><span class="option-label">B.</span> Konsentrasi logam berat paling tinggi ditemukan pada konsumen puncak (seperti burung pemakan ikan).</li>
+            <li class="option-item"><span class="option-label">C.</span> Konsentrasi logam berat terbagi secara merata di setiap tingkat trofik.</li>
+            <li class="option-item"><span class="option-label">D.</span> Logam berat akan terurai secara biokimia saat berpindah dari herbivora ke karnivora.</li>
+            <li class="option-item"><span class="option-label">E.</span> Pengurai (dekomposer) menerima tingkat akumulasi terendah karena tidak memakan jaringan hidup.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(5)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-5">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Biomagnifikasi (pembesaran biologis) adalah proses peningkatan konsentrasi zat persisten/non-biodegradabel (seperti logam berat) pada tingkatan trofik yang lebih tinggi. Konsumen puncak menerima akumulasi konsentrasi terbesar.
+        </div>
+    </div>
+
+    <!-- Soal 6 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 6</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Penerapan sistem klasifikasi kladistika (filogenetik) pada tumbuhan obat endemik di hutan hujan tropis Kalimantan didasarkan pada sekuens molekuler DNA kloroplas. Keunggulan utama pendekatan ini dalam upaya konservasi dibandingkan klasifikasi buatan (artifisial) adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Memudahkan pengelompokan berdasarkan khasiat obat dan warna bunga saja.</li>
+            <li class="option-item"><span class="option-label">B.</span> Menggambarkan hubungan kekerabatan evolusioner berdasarkan nenek moyang bersama secara lebih akurat.</li>
+            <li class="option-item"><span class="option-label">C.</span> Menghilangkan kebutuhan penamaan binomial nomenklatur.</li>
+            <li class="option-item"><span class="option-label">D.</span> Mengabaikan perbedaan struktur morfologi antar famili tumbuhan.</li>
+            <li class="option-item"><span class="option-label">E.</span> Memastikan semua tumbuhan dapat dibudidayakan secara in-vitro di luar lingkungannya.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(6)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-6">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Klasifikasi filogenetik/kladistika mencerminkan jalur evolusi dan tingkat kekerabatan genetik organisme berdasarkan *common ancestor* (nenek moyang bersama), bukan sekadar persamaan bentuk luar atau kegunaan praktis manusia.
+        </div>
+    </div>
+
+    <!-- Soal 7 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 7</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Fragmentasi hutan hujan akibat pembangunan koridor infrastruktur menyebabkan isolasi populasi Harimau Sumatra (*Panthera tigris sumatrae*). Berdasarkan prinsip biologi konservasi, apa ancaman utama jangka panjang terhadap keberlangsungannya?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Penurunan kemampuan adaptasi populasi terhadap perubahan lingkungan akibat inbreeding (perkawinan sedarah) yang menurunkan variasi genetik.</li>
+            <li class="option-item"><span class="option-label">B.</span> Peningkatan drastis laju mutasi menguntungkan pada sub-populasi yang terisolasi.</li>
+            <li class="option-item"><span class="option-label">C.</span> Perubahan status taksonomi harimau dari mamalia menjadi reptil karena adaptasi lingkungan.</li>
+            <li class="option-item"><span class="option-label">D.</span> Meningkatnya jumlah anak per kelahiran sebagai bentuk kompensasi alam.</li>
+            <li class="option-item"><span class="option-label">E.</span> Hilangnya sifat territorialitas akibat ruang gerak yang mengecil.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(7)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-7">
+            <div class="correct-answer">Kunci Jawaban: A</div>
+            Populasi kecil yang terisolasi mengalami penyusutan *gene pool* dan peningkatan *inbreeding depresion*. Hal ini mengekspresikan alel resesif merugikan dan menurunkan daya adaptasi serta ketahanan terhadap penyakit.
+        </div>
+    </div>
+
+    <!-- Soal 8 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 8</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Bakteri *Mycobacterium tuberculosis* penyebab penyakit TBC memiliki dinding sel kaya akan asam mikolat. Karakteristik struktur ini memberikan keuntungan bagi bakteri dalam hal...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Meningkatkan kecepatan pembelahan biner menjadi dua kali lipat.</li>
+            <li class="option-item"><span class="option-label">B.</span> Memberikan ketahanan terhadap dehidrasi, asam, dan sistem imun seluler host (fagositosis).</li>
+            <li class="option-item"><span class="option-label">C.</span> Memudahkan sintesis ATP tanpa memerlukan ATPase membran.</li>
+            <li class="option-item"><span class="option-label">D.</span> Memungkinkan bakteri melakukan fotosintesis aerobik.</li>
+            <li class="option-item"><span class="option-label">E.</span> Menghilangkan sifat antigenik sel sehingga tidak dikenali oleh antibodi.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(8)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-8">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Asam mikolat adalah lipid lilin kompleks pada dinding sel *Mycobacterium*. Struktur ini membuat sel tahan terhadap fagositosis lisosom sel imun, desikasi (kekeringan), dan pemutihan asam (tahan asam).
+        </div>
+    </div>
+
+    <!-- Soal 9 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 9</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Penyebaran fenomena resistensi antibiotik antar bakteri yang berbeda spesies sering kali terjadi secara horizontal di alam. Struktur seluer dan proses manakah yang bertanggung jawab langsung atas mekanisme ini?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Flagela melalui proses transduksi phage.</li>
+            <li class="option-item"><span class="option-label">B.</span> Pilus seks (pili) melalui transfer plasmid pada proses konjugasi.</li>
+            <li class="option-item"><span class="option-label">C.</span> Endospora melalui proses transformasi DNA bebas.</li>
+            <li class="option-item"><span class="option-label">D.</span> Ribosom 70S melalui proses translasi eksogen.</li>
+            <li class="option-item"><span class="option-label">E.</span> Mesosom melalui proses pembelahan biner asimetris.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(9)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-9">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Pilus seks memfasilitasi hubungan fisik antar dua bakteri (konjugasi) untuk mentransfer materi genetik ekstra-kromosom berupa plasmid (Plasmid R / Resistensi) secara horizontal.
+        </div>
+    </div>
+
+    <!-- Soal 10 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 10</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Penumpukan limbah fosfat dan nitrat di Danau Toba akibat pakan ikan berlebih memicu eutrofikasi. Urutan konsekuensi ekologis yang paling tepat yang memicu kematian massal organisme air adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Blooming alga $\rightarrow$ penurunan cahaya penetrasi $\rightarrow$ kematian tumbuhan air $\rightarrow$ dekomposisi meningkat $\rightarrow$ krisis Oksigen Terlarut (DO).</li>
+            <li class="option-item"><span class="option-label">B.</span> Peningkatan DO $\rightarrow$ blooming alga $\rightarrow$ pembentukan endospora bakteri $\rightarrow$ penurunan pH air.</li>
+            <li class="option-item"><span class="option-label">C.</span> Penurunan populasi mikroalga $\rightarrow$ peningkatan zooplankton $\rightarrow$ penurunan kadar racun.</li>
+            <li class="option-item"><span class="option-label">D.</span> Blooming alga $\rightarrow$ peningkatan fotosintesis dasar danau $\rightarrow$ lonjakan populasi ikan.</li>
+            <li class="option-item"><span class="option-label">E.</span> Penurunan penetrasi cahaya $\rightarrow$ penurunan dekomposer $\rightarrow$ aklimatisasi ikan air tawar.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(10)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-10">
+            <div class="correct-answer">Kunci Jawaban: A</div>
+            Nutrien berlebih memicu *blooming algae*. Permukaan air tertutup alga menghalangi sinar matahari masuk ke dalam air. Tumbuhan air mati, dan dekomposer (bakteri aerob) mengonsumsi oksigen terlarut dalam skala besar untuk menguraikan organik tersebut, memicu hipoksia/anoksia yang membunuh ikan.
+        </div>
+    </div>
+
+    <!-- Soal 11 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 11</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Sistem klasifikasi 3 Domain (Bacteria, Archaea, Eukarya) memisahkan Archaea dari Bacteria sejati. Alasan mendasar pemisahan Archaea yang ditemukan pada habitat ekstrem (seperti sumber air panas kawah vulkanik Dieng) adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Archaea memiliki membran inti sejati seperti halnya tumbuhan tinggi.</li>
+            <li class="option-item"><span class="option-label">B.</span> Archaea tidak memiliki dinding sel peptidoglikan dan sekuens rRNA serta ikatan eter lipid-nya lebih mirip Eukarya.</li>
+            <li class="option-item"><span class="option-label">C.</span> Bacteria sejati berukuran multiseluler sedangkan Archaea acap kali berukuran makroskopis.</li>
+            <li class="option-item"><span class="option-label">D.</span> Archaea melakukan reproduksi seksual dengan pembentukan spora generatif.</li>
+            <li class="option-item"><span class="option-label">E.</span> Bacteria sejati tidak memiliki materi genetik DNA melainkan RNA saja.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(11)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-11">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Archaea berbeda dari Bacteria karena tidak memiliki peptidoglikan pada dinding selnya (mengandung pseudopeptidoglikan/protein), memiliki ikatan eter pada lipid membran (bukan ester), serta memiliki RNA polimerase dan sekuens rRNA yang mirip Domain Eukarya.
+        </div>
+    </div>
+
+    <!-- Soal 12 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 12</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Restorasi lahan gambut melalui program pembasahan kembali (*rewetting*) di Sumatra bertujuan mengembalikan fungsi ekosistem sebagai penyerap karbon (*carbon sink*). Mekanisme ekologis utama yang mendukung hal tersebut adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Kondisi tergenang air menciptakan suasana anoksik/anaerobik yang memperlambat dekomposisi bahan organik, menahan karbon di dalam tanah.</li>
+            <li class="option-item"><span class="option-label">B.</span> Pembasahan meningkatkan laju respirasi aerobik mikroba tanah sehingga melepaskan oksigen berlebih.</li>
+            <li class="option-item"><span class="option-label">C.</span> Air memicu penguapan emisi $CO_2$ langsung menuju ke lapisan stratosfer.</li>
+            <li class="option-item"><span class="option-label">D.</span> Vegetasi lahan gambut mati total dan digantikan oleh komunitas cacing tanah.</li>
+            <li class="option-item"><span class="option-label">E.</span> Meningkatkan laju pembakaran spontan bahan kimia organik di bawah permukaan.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(12)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-12">
+            <div class="correct-answer">Kunci Jawaban: A</div>
+            Ekosistem gambut menimbun karbon karena kondisi anaerobik tergenang air memperlambat kerja bakteri dekomposer aerobik. Jika gambut mengering, dekomposisi aerob bertambah cepat dan melepaskan $CO_2$ ke atmosfer. *Rewetting* mengembalikan kondisi anoksik penahan karbon tersebut.
+        </div>
+    </div>
+
+    <!-- Soal 13 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 13</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Upaya konservasi plasma nutfah padi lokal (seperti varieties padi beras merah Cianjur dan varietas lokal Bali) secara *in-situ* di lahan pertanian tradisional sangat penting untuk ketahanan pangan nasional karena...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Menjamin tanaman tidak akan pernah mengalami mutasi genetik selamanya.</li>
+            <li class="option-item"><span class="option-label">B.</span> Menjaga ketersediaan reservoir gen unggul alami yang adaptif terhadap hama lokal dan stres iklim.</li>
+            <li class="option-item"><span class="option-label">C.</span> Mencegah perlunya penggunaan pupuk dan air pada budidaya pertanian.</li>
+            <li class="option-item"><span class="option-label">D.</span> Menghasilkan tanaman padi yang siap dipanen setiap bulan tanpa henti.</li>
+            <li class="option-item"><span class="option-label">E.</span> Menggantikan posisi padi hibrida modern secara total dalam industri pangan ekspor.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(13)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-13">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Varietas lokal mengandung keanekaragaman genetik yang kaya (pool genetik) yang telah teruji melampaui ko-evolusi dengan hama dan kondisi iklim setempat. Varietas ini menyimpan gen ketahanan penting untuk pemuliaan tanaman di masa depan.
+        </div>
+    </div>
+
+    <!-- Soal 14 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 14</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Bakteri *Rhizobium leguminosarum* berinteraksi secara simbiotik dengan akar tanaman kacang-kacangan (*Leguminosae*). Keuntungan langsung yang didapat oleh tanaman dari bentuk interaksi ini adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Memperoleh pasokan glukosa langsung dari hasil pencernaan bakteri.</li>
+            <li class="option-item"><span class="option-label">B.</span> Memperoleh senyawa nitrogen terfiksasi (seperti amonium/nitrat) untuk sintesis protein tanaman.</li>
+            <li class="option-item"><span class="option-label">C.</span> Meningkatkan penyerapan air melalui proses transpirasi yang dibantu flagela bakteri.</li>
+            <li class="option-item"><span class="option-label">D.</span> Memperoleh perlindungan dari paparan sinar ultraviolet berlebih.</li>
+            <li class="option-item"><span class="option-label">E.</span> Memperoleh hormon pertumbuhan eksogen tanpa batas.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(14)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-14">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            *Rhizobium* mampu mengubah gas nitrogen ($N_2$) atmosfer yang tidak dapat dimanfaatkan langsung oleh tumbuhan menjadi bentuk terikat ($NH_4^+$ / $NO_3^-$) melalui enzim nitrogenase. Sebagai imbalannya, bakteri mendapat karbohidrat dari tanaman.
+        </div>
+    </div>
+
+    <!-- Soal 15 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 15</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Di ekosistem terumbu karang Bunaken, kenaikan suhu air laut yang ekstrem akibat fenomena El Niño memicu terjadinya *coral bleaching* (pemutihan karang). Mekanisme biologis yang melatarbelakangi fenomena ini adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Kematian massa ikan herbivora yang memakan cangkang kapur karang.</li>
+            <li class="option-item"><span class="option-label">B.</span> Lepas atau dikeluarkannya alga endosimbion (*Zooxanthellae*) dari jaringan polip karang akibat stres termal.</li>
+            <li class="option-item"><span class="option-label">C.</span> Pembentukan lapisan endospora oleh polip karang untuk melindungi diri.</li>
+            <li class="option-item"><span class="option-label">D.</span> Penurunan kadar garam (salinitas) laut yang melarutkan deposit kalsium karbonat.</li>
+            <li class="option-item"><span class="option-label">E.</span> Invasi bakteri pencerna kapur secara masif pada permukaan laut.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(15)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-15">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Simbiosis mutualisme terjadi antara polip karang dan *Zooxanthellae*. Stres suhu panas merusak fotosistem *Zooxanthellae* dan menghasilkan molekul racun (ROS), sehingga host (karang) mengeluarkan alga tersebut. Karang kehilangan warna serta sumber nutrisi utamanya.
+        </div>
+    </div>
+
+    <!-- Soal 16 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 16</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Pernyataan manakah yang paling tepat membedakan strategi konservasi *In-situ* (seperti Taman Nasional Ujung Kulon) dengan *Ex-situ* (seperti Taman Safari atau Kebun Raya Bogor)?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> In-situ melestarikan spesies beserta proses ekologis dan interaksi habitat alaminya; Ex-situ melestarikan spesies di luar habitat aslinya dengan kontrol manusia.</li>
+            <li class="option-item"><span class="option-label">B.</span> In-situ hanya difokuskan untuk mikroorganisme; Ex-situ khusus untuk mamalia besar.</li>
+            <li class="option-item"><span class="option-label">C.</span> In-situ dilakukan di laboratorium; Ex-situ dilakukan di hutan lindung kawasan pegunungan.</li>
+            <li class="option-item"><span class="option-label">D.</span> In-situ tidak membutuhkan biaya; Ex-situ sepenuhnya dibiayai oleh lembaga internasional.</li>
+            <li class="option-item"><span class="option-label">E.</span> In-situ bertujuan mengisolasi spesimen dari rantai makanan; Ex-situ membiarkan spesimen liar.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(16)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-16">
+            <div class="correct-answer">Kunci Jawaban: A</div>
+            Konservasi *In-situ* dilakukan di dalam habitat asli sehingga memelihara dinamika ekosistem alami. Konservasi *Ex-situ* memindahkan organisme ke luar habitat aslinya untuk perlindungan, penangkaran, atau penelitian di bawah pengawasan manusia.
+        </div>
+    </div>
+
+    <!-- Soal 17 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 17</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Bakteri *Nitrosomonas* dan *Nitrobacter* menguntungkan sektor pertanian karena perannya dalam siklus nitrogen, yaitu...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Mengubah nitrat menjadi gas nitrogen gratis melalui denitrifikasi anaerob.</li>
+            <li class="option-item"><span class="option-label">B.</span> Mengoksidasi amonia menjadi nitrit, dan selanjutnya nitrit menjadi nitrat yang mudah diserap tumbuhan (nitrifikasi).</li>
+            <li class="option-item"><span class="option-label">C.</span> Mengubah asam amino dari humus menjadi zat radioaktif alami.</li>
+            <li class="option-item"><span class="option-label">D.</span> Mencegah penyerapan air oleh gulma liar.</li>
+            <li class="option-item"><span class="option-label">E.</span> Membunuh hama serangga tanah secara spesifik.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(17)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-17">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Proses nitrifikasi adalah oksidasi kemosintetik dua tahap: *Nitrosomonas* mengoksidasi amonia ($NH_3$) menjadi nitrit ($NO_2^-$), lalu *Nitrobacter* mengoksidasi nitrit menjadi nitrat ($NO_3^-$) yang merupakan sumber N utama bagi tumbuhan.
+        </div>
+    </div>
+
+    <!-- Soal 18 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 18</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Hujan asam di sekitar kawasan industri dapat menurunkan pH tanah hutan hujan tropis. Dampak langsung dari gangguan faktor abiotik ini terhadap interaksi simbiotik tanah (mikoriza dan akar pohon) adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Peningkatan laju fotosintesis karena tambahan ion hidrogen.</li>
+            <li class="option-item"><span class="option-label">B.</span> Kerusakan hifa mikoriza dan pelarutan hara penting (seperti fosfor & kalsium) hingga tercuci, mengganggu penyerapan nutrisi pohon.</li>
+            <li class="option-item"><span class="option-label">C.</span> Perubahan warna daun pohon menjadi merah terang secara permanen.</li>
+            <li class="option-item"><span class="option-label">D.</span> Peningkatan laju pembentukan bintil akar pada pohon non-legum.</li>
+            <li class="option-item"><span class="option-label">E.</span> Tidak ada dampak karena jamur mikoriza kebal terhadap asam pekat.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(18)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-18">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Pengasaman tanah merusak struktur hifa jamur mikoriza, melarutkan unsur hara penting seperti $Ca^{2+}$ dan $Mg^{2+}$ hingga terbilang memicu pencucian (*leaching*), serta melepaskan logam beracun $Al^{3+}$ yang merusak jaringan akar.
+        </div>
+    </div>
+
+    <!-- Soal 19 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 19</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Teknik Pewarnaan Gram membedakan bakteri menjadi Gram-positif dan Gram-negatif. Apabila sampel bakteri *Escherichia coli* diwarnai dengan pewarnaan Gram, hasil mikroskopis dan alasan strukturalnya yang tepat adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Berwarna Ungu; karena memiliki peptidoglikan yang sangat tebal menahan Kristal Violet.</li>
+            <li class="option-item"><span class="option-label">B.</span> Berwarna Merah; karena dinding peptidoglikannya tipis dan memiliki membran luar kaya lipopolisakarida yang terbilang saat pencucian alkohol sehingga menyerap Safranin.</li>
+            <li class="option-item"><span class="option-label">C.</span> Transparan; karena tidak memiliki dinding sel sama sekali.</li>
+            <li class="option-item"><span class="option-label">D.</span> Berwarna Hijau; karena mengandung pigmen klorofil pada dinding selnya.</li>
+            <li class="option-item"><span class="option-label">E.</span> Berwarna Kuning; karena membentuk endospora bermembran tebal.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(19)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-19">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            *E. coli* adalah bakteri Gram-negatif. Dinding selnya terdiri atas peptidoglikan tipis dan membran luar. Pencucian alkohol melarutkan lipid membran luar, membuat kompleks kristal violet-iodin luntur, sehingga sel menyerap zat pembanding berwarna merah (Safranin).
+        </div>
+    </div>
+
+    <!-- Soal 20 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 20</span>
+            <span class="topic-tag">Keanekaragaman Hayati</span>
+        </div>
+        <div class="question-text">
+            Garis Wallace memisahkan fauna tipe Asiatis dengan zona Peralihan di Indonesia. Faktor biogeografis utama yang menjadi penghalang (*barrier*) alami bagi penyebaran mamalia darat besar Asiatis ke wilayah timur adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Perbedaan tingginya intensitas curah hujan tahunan.</li>
+            <li class="option-item"><span class="option-label">B.</span> Perbedaan jenis batuan kapur di dasar pulau.</li>
+            <li class="option-item"><span class="option-label">C.</span> Keberadaan palung laut yang dalam (seperti Selat Makassar dan Lombok) yang tetap ada meskipun pada Zaman Es/Glacial.</li>
+            <li class="option-item"><span class="option-label">D.</span> Tingginya konsentrasi gas oksigen di pulau Lombok.</li>
+            <li class="option-item"><span class="option-label">E.</span> Angin muson yang berembun sangat kencang.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(20)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-20">
+            <div class="correct-answer">Kunci Jawaban: C</div>
+            Selat Makassar dan Selat Lombok merupakan palung laut yang sangat dalam. Ketika permukaan air laut turun drastis pada zaman es (pleistosen), Sundaland menyatu dengan Asia daratan, namun selat dalam ini tetap menjadi perairan luas yang tidak bisa diseberangi oleh mamalia darat besar.
+        </div>
+    </div>
+
+    <!-- Soal 21 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 21</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Teknologi biopestisida memanfaatkan bakteri *Bacillus thuringiensis* (Bt) untuk mengendalikan hama ulat pemakan daun. Efek toksik kristal protein endotoksin Bt terjadi karena...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Merusak jaringan sel saraf pusat serangga secara seketika.</li>
+            <li class="option-item"><span class="option-label">B.</span> Protein terlarut dalam suasana alkali usus serangga, mengikat reseptor sel epitel usus, dan membentuk pori hingga sel lisis.</li>
+            <li class="option-item"><span class="option-label">C.</span> Menghalangi masuknya sinar matahari ke dalam mata majemuk serangga.</li>
+            <li class="option-item"><span class="option-label">D.</span> Mengencerkan darah serangga menjadi air murni.</li>
+            <li class="option-item"><span class="option-label">E.</span> Menghentikan proses pembentukan telur serangga betina secara permanen.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(21)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-21">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Kristal protein Cry (endotoksin) Bt bersifat protoxin yang diaktifkan oleh pH basa (alkali) dan protease usus tengah serangga target. Toksin aktif mengikat reseptor sel epitel midgut, membentuk pori membran, menyebabkan ketidakseimbangan osmotik, lisis sel, dan kematian serangga.
+        </div>
+    </div>
+
+    <!-- Soal 22 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 22</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Setelah penebangan liar atau kebakaran di hutan hujan tropis, kawasan tersebut akan mengalami proses pemulihan bertahap yang dikenal sebagai suksesi sekunder. Ciri khas dari suksesi sekunder dibandingkan suksesi primer adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Dimulai dari substrat batuan mati tanpa adanya lapisan tanah awal.</li>
+            <li class="option-item"><span class="option-label">B.</span> Berjalan jauh lebih cepat karena tanah dan biji/diaspor tumbuhan masih tersisa di substrat.</li>
+            <li class="option-item"><span class="option-label">C.</span> Selalu menghasilkan komunitas klimaks berupa vegetasi lumut kerak saja.</li>
+            <li class="option-item"><span class="option-label">D.</span> Tidak memerlukan kehadiran produsen dalam rantai makanannya.</li>
+            <li class="option-item"><span class="option-label">E.</span> Membutuhkan waktu jutaan tahun untuk membentuk tumbuhan pionir.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(22)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-22">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Suksesi sekunder terjadi pada area yang terganggu tetapi substrat tanah aslinya masih ada (utuh), beserta bank biji (*seed bank*) dan mikroorganisme tanah. Karena itu, pemulihan komunitas berlangsung lebih cepat dibanding suksesi primer (yang mulai dari nol/batuan gundul).
+        </div>
+    </div>
+
+    <!-- Soal 23 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 23</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Dalam piramida energi suatu ekosistem hutan tropis, hanya sekitar 10% energi yang dapat ditransfer dari satu tingkat trofik ke tingkat trofik berikutnya di atasnya. Ke manakah sebagian besar (sekitar 90%) energi tersebut hilang?
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Dihancurkan total menjadi materi gelap oleh reaksi fisi seluler.</li>
+            <li class="option-item"><span class="option-label">B.</span> Disimpan selamanya di dalam molekul DNA organisme yang mati.</li>
+            <li class="option-item"><span class="option-label">C.</span> Hilang sebagai panas metabolisme, aktivitas pergerakan, dan sisa bahan yang tidak dicerna (feses/eksresi).</li>
+            <li class="option-item"><span class="option-label">D.</span> Dipantulkan kembali ke luar angkasa oleh jaringan daun.</li>
+            <li class="option-item"><span class="option-label">E.</span> Dikonversi menjadi energi potensial gravitasi tanah.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(23)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-23">
+            <div class="correct-answer">Kunci Jawaban: C</div>
+            Sesuai Hukum Termodinamika II, konversi energi tidak pernah 100% efisien. Sebagian besar energi yang dikonsumsi digunakan organisme untuk respirasi seluler, mempertahankan suhu tubuh, bergerak, serta terbuang bersama materi yang tidak tercerna (eksresi/feses).
+        </div>
+    </div>
+
+    <!-- Soal 24 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 24</span>
+            <span class="topic-tag">Struktur & Peran Bakteri</span>
+        </div>
+        <div class="question-text">
+            Bakteri *Clostridium botulinum* dapat memproduksi racun botulinum yang sangat berbahaya pada makanan kaleng yang dikemas secara tidak steril. Ciri adaptasi struktur bakteri anaerob obligat ini saat berada di lingkungan beroksigen tinggi atau tidak menguntungkan adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Membentuk kapsul tebal dari bahan polisakarida cair.</li>
+            <li class="option-item"><span class="option-label">B.</span> Membentuk endospora yang tahan panas, kekeringan, dan racun kimia.</li>
+            <li class="option-item"><span class="option-label">C.</span> Melepas seluruh plasmit DNA keluar dari dinding sel.</li>
+            <li class="option-item"><span class="option-label">D.</span> Mengubah respirasi seluler menjadi fotosintesis terang.</li>
+            <li class="option-item"><span class="option-label">E.</span> Memperbanyak diri secara masif melalui fragmentasi hifa.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(24)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-24">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            Beberapa genus bakteri (seperti *Bacillus* dan *Clostridium*) dapat membentuk endospora dorman yang sangat resisten terhadap stres lingkungan (panas, radiasi, desikasi, oksigen tinggi) untuk mempertahankan materi genetiknya hingga kondisi membaik.
+        </div>
+    </div>
+
+    <!-- Soal 25 -->
+    <div class="question-card">
+        <div class="question-header">
+            <span class="question-number">Soal 25</span>
+            <span class="topic-tag">Ekosistem Indonesia</span>
+        </div>
+        <div class="question-text">
+            Vegetasi mangrove spesies *Avicennia spp.* (api-api) mendominasi zona terluar yang berhadapan langsung dengan ombak laut. Bentuk adaptasi morfologi dan fisiologi spesifik dari tumbuhan ini terhadap kondisi abiotik substrat berlumpur anoksik dan tinggi garam adalah...
+        </div>
+        <ul class="options-list">
+            <li class="option-item"><span class="option-label">A.</span> Daun lebar tanpa stomata dan akar tunggang yang sangat dalam.</li>
+            <li class="option-item"><span class="option-label">B.</span> Akar napas (pneumatofor) yang tumbuh menyembul ke atas substrat untuk mengambil oksigen serta kelenjar ekskresi garam di daun.</li>
+            <li class="option-item"><span class="option-label">C.</span> Batang berongga besar di dalam air tanpa adanya jaringan pembuluh xilem.</li>
+            <li class="option-item"><span class="option-label">D.</span> Menggugurkan seluruh daun secara berkala setiap bulan untuk mengurangi pemuasan.</li>
+            <li class="option-item"><span class="option-label">E.</span> Mengembangkan buah tanpa biji yang mengapung permanen di laut.</li>
+        </ul>
+        <button class="explanation-toggle" onclick="toggleExplanation(25)">▸ Lihat Kunci Jawaban & Pembahasan</button>
+        <div class="explanation-box" id="exp-25">
+            <div class="correct-answer">Kunci Jawaban: B</div>
+            *Avicennia* menoleransi substrat lumpur anoksik (kurang oksigen) dengan memiliki akar napas (*pneumatofor*) yang tumbuh ke atas menjangkau udara. Selain itu, mereka memiliki kelenjar garam spesifik di permukaan daun untuk mengekskresikan kelebihan garam dari tubuhnya (halofit).
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function toggleExplanation(id) {
+        const box = document.getElementById('exp-' + id);
+        if (box.classList.contains('active')) {
+            box.classList.remove('active');
+        } else {
+            box.classList.add('active');
+        }
+    }
+
+    function toggleAllExplanations() {
+        const boxes = document.querySelectorAll('.explanation-box');
+        const anyHidden = Array.from(boxes).some(box => !box.classList.contains('active'));
+        
+        boxes.forEach(box => {
+            if (anyHidden) {
+                box.classList.add('active');
+            } else {
+                box.classList.remove('active');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
